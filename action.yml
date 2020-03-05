@@ -1,0 +1,26 @@
+# action.yml
+name: 'Image Resizer Action'
+description: 'Resizes the images in the given folder and uploads them to arifacts'
+inputs:
+  image-folder:
+    description: 'Folder in which original images are stored'
+    required: true
+    default: 'images'
+  new-resolution:
+    description: 'New resolution for images'
+    required: true
+    default: '420x'
+  output-folder:
+    description: 'Folder in which resized images are stored'
+    required: true
+    default: 'resized_images'    
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.image-folder }}
+    - ${{ inputs.new-resolution }}
+    - ${{ inputs.output-folder }}
