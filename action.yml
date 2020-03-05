@@ -1,6 +1,9 @@
 # action.yml
 name: 'Image Resizer Action'
 description: 'Resizes the images in the given folder and uploads them to arifacts'
+branding:
+  icon: 'image'  
+  color: 'green'
 inputs:
   image-folder:
     description: 'Folder in which original images are stored'
