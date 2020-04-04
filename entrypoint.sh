@@ -1,10 +1,8 @@
 #!/bin/sh -l
 
-# FOR PNG
-
 OIFS="$IFS"
 IFS=$'\n'
-for IN in `find $1 -iname "*.*" -o -iname "*.png"` -maxdepth 1
+for IN in `find $1 -maxdepth 1 -iname "*.*" -o -iname "*.png"`
 do
 OUT=${IN/$1/$3}
 DIR=$(dirname $OUT)
